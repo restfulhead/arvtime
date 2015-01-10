@@ -12,12 +12,21 @@ import XCGLogger
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
+    // UI
     @IBOutlet weak var window: NSWindow!
     @IBOutlet weak var statusMenu: NSMenu!
     
-    let log = XCGLogger.defaultInstance()
+    // TODO move me
+    @IBOutlet weak var timeEntryTable: NSTableView!
+
+    
+    
     let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(-1)
+    
+    // business logic
+    let log = XCGLogger.defaultInstance()
     let timeEntryImporter = TimerEntryImporter()
+    var timeEntryList: [TimeEntry] = []
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         
@@ -33,11 +42,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         statusItem.menu = statusMenu
         
         // hide main window
-        self.window!.orderOut(self)
+        //self.window!.orderOut(self)
         
         // start tasks
-        //timeEntryImporter.start()
-        timeEntryImporter.importTimeEntries();
+        importTimeEntries()
     }
 
     func applicationWillTerminate(aNotification: NSNotification) {
@@ -47,6 +55,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
 
+    func importTimeEntries()
+    {
+        timeEntryImporter.importTimeEntries({ (timeEntry: TimeEntry) -> Void in
+            println(timeEntry)
+            self.timeEntryList.append(timeEntry)
+            self.timeEntryTable.reloadData();
+        })
+    }
+
+    // status menu logic
     @IBAction func menueClicked(sender: NSMenuItem) {
         log.info("Window is visible: \(self.window!.visible)")
 
@@ -57,7 +75,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             self.window!.orderFront(self)
             sender.title = "Hide time entries"
         }
-        
     }
-}
+    
+   }
 

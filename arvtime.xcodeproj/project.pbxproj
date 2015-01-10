@@ -8,10 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		5F4FAE1E1A618DEE00F7F626 /* TimeEntryImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4FAE1D1A618DEE00F7F626 /* TimeEntryImporter.swift */; };
+		5F4FAE3E1A6198F800F7F626 /* TimeStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4FAE3D1A6198F800F7F626 /* TimeStructs.swift */; };
+		5F4FAE461A61A53E00F7F626 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4FAE451A61A53E00F7F626 /* SwiftyJSON.swift */; };
 		5F9829CE1A617B6C00B2CC01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9829CD1A617B6C00B2CC01 /* AppDelegate.swift */; };
 		5F9829D01A617B6C00B2CC01 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F9829CF1A617B6C00B2CC01 /* Images.xcassets */; };
 		5F9829D31A617B6C00B2CC01 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F9829D11A617B6C00B2CC01 /* MainMenu.xib */; };
 		5F9829DF1A617B6C00B2CC01 /* arvtimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9829DE1A617B6C00B2CC01 /* arvtimeTests.swift */; };
+		5FF4EC7B1A61BC0100935C79 /* TimeEntryListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF4EC7A1A61BC0100935C79 /* TimeEntryListController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,34 @@
 			remoteGlobalIDString = 55E3EE5019D76F280068C3A7;
 			remoteInfo = XCGLoggerTests;
 		};
+		5F4FAE351A61987600F7F626 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5F4FAE2E1A61987600F7F626 /* SwiftyJSON.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2E4FEFDB19575BE100351305;
+			remoteInfo = SwiftyJSON;
+		};
+		5F4FAE371A61987600F7F626 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5F4FAE2E1A61987600F7F626 /* SwiftyJSON.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2E4FEFE619575BE100351305;
+			remoteInfo = SwiftyJSONTests;
+		};
+		5F4FAE391A61987600F7F626 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5F4FAE2E1A61987600F7F626 /* SwiftyJSON.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4EC1C1C91A0C1A2D0026ED0B;
+			remoteInfo = SwiftyJSONOSX;
+		};
+		5F4FAE3B1A61987600F7F626 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5F4FAE2E1A61987600F7F626 /* SwiftyJSON.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4EC1C1D31A0C1A2D0026ED0B;
+			remoteInfo = SwiftyJSONOSXTests;
+		};
 		5F9829D91A617B6C00B2CC01 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5F9829C01A617B6C00B2CC01 /* Project object */;
@@ -48,6 +79,9 @@
 /* Begin PBXFileReference section */
 		5F4FAE1D1A618DEE00F7F626 /* TimeEntryImporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeEntryImporter.swift; sourceTree = "<group>"; };
 		5F4FAE221A6197EF00F7F626 /* XCGLogger.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = XCGLogger.xcodeproj; sourceTree = "<group>"; };
+		5F4FAE2E1A61987600F7F626 /* SwiftyJSON.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftyJSON.xcodeproj; path = SwiftyJSON/SwiftyJSON.xcodeproj; sourceTree = "<group>"; };
+		5F4FAE3D1A6198F800F7F626 /* TimeStructs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeStructs.swift; sourceTree = "<group>"; };
+		5F4FAE451A61A53E00F7F626 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		5F9829C81A617B6C00B2CC01 /* arvtime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = arvtime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F9829CC1A617B6C00B2CC01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F9829CD1A617B6C00B2CC01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +90,7 @@
 		5F9829D81A617B6C00B2CC01 /* arvtimeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = arvtimeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F9829DD1A617B6C00B2CC01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F9829DE1A617B6C00B2CC01 /* arvtimeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = arvtimeTests.swift; sourceTree = "<group>"; };
+		5FF4EC7A1A61BC0100935C79 /* TimeEntryListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeEntryListController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +121,17 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		5F4FAE2F1A61987600F7F626 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5F4FAE361A61987600F7F626 /* SwiftyJSON.framework */,
+				5F4FAE381A61987600F7F626 /* SwiftyJSONTests.xctest */,
+				5F4FAE3A1A61987600F7F626 /* SwiftyJSON.framework */,
+				5F4FAE3C1A61987600F7F626 /* SwiftyJSONOSXTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		5F9829BF1A617B6C00B2CC01 = {
 			isa = PBXGroup;
 			children = (
@@ -108,11 +154,14 @@
 		5F9829CA1A617B6C00B2CC01 /* arvtime */ = {
 			isa = PBXGroup;
 			children = (
+				5F4FAE451A61A53E00F7F626 /* SwiftyJSON.swift */,
 				5F9829CD1A617B6C00B2CC01 /* AppDelegate.swift */,
 				5F9829CF1A617B6C00B2CC01 /* Images.xcassets */,
 				5F9829D11A617B6C00B2CC01 /* MainMenu.xib */,
 				5F9829CB1A617B6C00B2CC01 /* Supporting Files */,
 				5F4FAE1D1A618DEE00F7F626 /* TimeEntryImporter.swift */,
+				5F4FAE3D1A6198F800F7F626 /* TimeStructs.swift */,
+				5FF4EC7A1A61BC0100935C79 /* TimeEntryListController.swift */,
 			);
 			path = arvtime;
 			sourceTree = "<group>";
@@ -145,6 +194,7 @@
 		5FA2164A1A618510008B3A6C /* externals */ = {
 			isa = PBXGroup;
 			children = (
+				5F4FAE2E1A61987600F7F626 /* SwiftyJSON.xcodeproj */,
 				5F4FAE221A6197EF00F7F626 /* XCGLogger.xcodeproj */,
 			);
 			path = externals;
@@ -219,6 +269,10 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = 5F4FAE2F1A61987600F7F626 /* Products */;
+					ProjectRef = 5F4FAE2E1A61987600F7F626 /* SwiftyJSON.xcodeproj */;
+				},
+				{
 					ProductGroup = 5F4FAE231A6197EF00F7F626 /* Products */;
 					ProjectRef = 5F4FAE221A6197EF00F7F626 /* XCGLogger.xcodeproj */;
 				},
@@ -253,6 +307,34 @@
 			remoteRef = 5F4FAE2C1A6197EF00F7F626 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		5F4FAE361A61987600F7F626 /* SwiftyJSON.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SwiftyJSON.framework;
+			remoteRef = 5F4FAE351A61987600F7F626 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5F4FAE381A61987600F7F626 /* SwiftyJSONTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = SwiftyJSONTests.xctest;
+			remoteRef = 5F4FAE371A61987600F7F626 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5F4FAE3A1A61987600F7F626 /* SwiftyJSON.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SwiftyJSON.framework;
+			remoteRef = 5F4FAE391A61987600F7F626 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5F4FAE3C1A61987600F7F626 /* SwiftyJSONOSXTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = SwiftyJSONOSXTests.xctest;
+			remoteRef = 5F4FAE3B1A61987600F7F626 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -281,6 +363,9 @@
 			files = (
 				5F9829CE1A617B6C00B2CC01 /* AppDelegate.swift in Sources */,
 				5F4FAE1E1A618DEE00F7F626 /* TimeEntryImporter.swift in Sources */,
+				5F4FAE3E1A6198F800F7F626 /* TimeStructs.swift in Sources */,
+				5FF4EC7B1A61BC0100935C79 /* TimeEntryListController.swift in Sources */,
+				5F4FAE461A61A53E00F7F626 /* SwiftyJSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

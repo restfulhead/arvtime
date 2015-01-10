@@ -7,21 +7,57 @@
 //
 
 import Cocoa
+import XCGLogger
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     @IBOutlet weak var window: NSWindow!
-
-
+    @IBOutlet weak var statusMenu: NSMenu!
+    
+    let log = XCGLogger.defaultInstance()
+    let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(-1)
+    let timeEntryImporter = TimerEntryImporter()
+    
     func applicationDidFinishLaunching(aNotification: NSNotification) {
-        // Insert code here to initialize your application
+        
+        // initialize logging
+        log.setup(logLevel: .Debug, showLogLevel: true, showFileNames: true, showLineNumbers: true)
+        
+        // initialize icon
+        let icon = NSImage(named: "statusIcon")
+        icon?.setTemplate(true)
+        
+        // initialize status menu
+        statusItem.image = icon
+        statusItem.menu = statusMenu
+        
+        // hide main window
+        self.window!.orderOut(self)
+        
+        // start tasks
+        //timeEntryImporter.start()
+        timeEntryImporter.importTimeEntries();
     }
 
     func applicationWillTerminate(aNotification: NSNotification) {
-        // Insert code here to tear down your application
+        
+        // stop tasks
+        //timeEntryImporter.stop();
     }
 
 
+    @IBAction func menueClicked(sender: NSMenuItem) {
+        log.info("Window is visible: \(self.window!.visible)")
+
+        if (self.window!.visible) {
+            self.window!.orderOut(self)
+            sender.title = "Show time entries"
+        } else {
+            self.window!.orderFront(self)
+            sender.title = "Hide time entries"
+        }
+        
+    }
 }
 

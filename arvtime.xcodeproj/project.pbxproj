@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F4FAE1E1A618DEE00F7F626 /* TimeEntryImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4FAE1D1A618DEE00F7F626 /* TimeEntryImporter.swift */; };
 		5F9829CE1A617B6C00B2CC01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9829CD1A617B6C00B2CC01 /* AppDelegate.swift */; };
 		5F9829D01A617B6C00B2CC01 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F9829CF1A617B6C00B2CC01 /* Images.xcassets */; };
 		5F9829D31A617B6C00B2CC01 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F9829D11A617B6C00B2CC01 /* MainMenu.xib */; };
@@ -14,6 +15,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		5F4FAE281A6197EF00F7F626 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5F4FAE221A6197EF00F7F626 /* XCGLogger.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 55E3EE4519D76F280068C3A7;
+			remoteInfo = "XCGLogger (iOS)";
+		};
+		5F4FAE2A1A6197EF00F7F626 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5F4FAE221A6197EF00F7F626 /* XCGLogger.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 554DF41719D76FE7005708BE;
+			remoteInfo = "XCGLogger (OS X)";
+		};
+		5F4FAE2C1A6197EF00F7F626 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5F4FAE221A6197EF00F7F626 /* XCGLogger.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 55E3EE5019D76F280068C3A7;
+			remoteInfo = XCGLoggerTests;
+		};
 		5F9829D91A617B6C00B2CC01 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5F9829C01A617B6C00B2CC01 /* Project object */;
@@ -24,6 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5F4FAE1D1A618DEE00F7F626 /* TimeEntryImporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeEntryImporter.swift; sourceTree = "<group>"; };
+		5F4FAE221A6197EF00F7F626 /* XCGLogger.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = XCGLogger.xcodeproj; sourceTree = "<group>"; };
 		5F9829C81A617B6C00B2CC01 /* arvtime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = arvtime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F9829CC1A617B6C00B2CC01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F9829CD1A617B6C00B2CC01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -52,9 +76,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5F4FAE231A6197EF00F7F626 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5F4FAE291A6197EF00F7F626 /* XCGLogger.framework */,
+				5F4FAE2B1A6197EF00F7F626 /* XCGLogger.framework */,
+				5F4FAE2D1A6197EF00F7F626 /* XCGLoggerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		5F9829BF1A617B6C00B2CC01 = {
 			isa = PBXGroup;
 			children = (
+				5FA2164A1A618510008B3A6C /* externals */,
 				5F9829CA1A617B6C00B2CC01 /* arvtime */,
 				5F9829DB1A617B6C00B2CC01 /* arvtimeTests */,
 				5F9829C91A617B6C00B2CC01 /* Products */,
@@ -77,6 +112,7 @@
 				5F9829CF1A617B6C00B2CC01 /* Images.xcassets */,
 				5F9829D11A617B6C00B2CC01 /* MainMenu.xib */,
 				5F9829CB1A617B6C00B2CC01 /* Supporting Files */,
+				5F4FAE1D1A618DEE00F7F626 /* TimeEntryImporter.swift */,
 			);
 			path = arvtime;
 			sourceTree = "<group>";
@@ -104,6 +140,14 @@
 				5F9829DD1A617B6C00B2CC01 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5FA2164A1A618510008B3A6C /* externals */ = {
+			isa = PBXGroup;
+			children = (
+				5F4FAE221A6197EF00F7F626 /* XCGLogger.xcodeproj */,
+			);
+			path = externals;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,6 +217,12 @@
 			mainGroup = 5F9829BF1A617B6C00B2CC01;
 			productRefGroup = 5F9829C91A617B6C00B2CC01 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 5F4FAE231A6197EF00F7F626 /* Products */;
+					ProjectRef = 5F4FAE221A6197EF00F7F626 /* XCGLogger.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				5F9829C71A617B6C00B2CC01 /* arvtime */,
@@ -180,6 +230,30 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		5F4FAE291A6197EF00F7F626 /* XCGLogger.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = XCGLogger.framework;
+			remoteRef = 5F4FAE281A6197EF00F7F626 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5F4FAE2B1A6197EF00F7F626 /* XCGLogger.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = XCGLogger.framework;
+			remoteRef = 5F4FAE2A1A6197EF00F7F626 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5F4FAE2D1A6197EF00F7F626 /* XCGLoggerTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = XCGLoggerTests.xctest;
+			remoteRef = 5F4FAE2C1A6197EF00F7F626 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		5F9829C61A617B6C00B2CC01 /* Resources */ = {
@@ -206,6 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F9829CE1A617B6C00B2CC01 /* AppDelegate.swift in Sources */,
+				5F4FAE1E1A618DEE00F7F626 /* TimeEntryImporter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,6 +399,7 @@
 				INFOPLIST_FILE = arvtime/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "externals/**";
 			};
 			name = Debug;
 		};
@@ -335,6 +411,7 @@
 				INFOPLIST_FILE = arvtime/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "externals/**";
 			};
 			name = Release;
 		};
@@ -393,6 +470,7 @@
 				5F9829E41A617B6C00B2CC01 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5F9829E51A617B6C00B2CC01 /* Build configuration list for PBXNativeTarget "arvtimeTests" */ = {
 			isa = XCConfigurationList;
@@ -401,6 +479,7 @@
 				5F9829E71A617B6C00B2CC01 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -15,23 +15,28 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     // UI
     @IBOutlet weak var window: NSWindow!
     @IBOutlet weak var statusMenu: NSMenu!
+    var preferencesWindow: PreferencesController!
     
     // TODO move me
     @IBOutlet weak var timeEntryTable: NSTableView!
 
-    
-    
     let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(-1)
     
     // business logic
     let log = XCGLogger.defaultInstance()
-    let timeEntryImporter = TimerEntryImporter()
     var timeEntryList: [TimeEntry] = []
+    var appPreferenceManager: AppPreferenceManager!
+    var timeEntryImporter: TimerEntryImporter!
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         
         // initialize logging
         log.setup(logLevel: .Debug, showLogLevel: true, showFileNames: true, showLineNumbers: true)
+        
+        // load user preferences
+        appPreferenceManager = AppPreferenceManager()
+        appPreferenceManager.loadPreferences()
+        timeEntryImporter = TimerEntryImporter(appPreferenceManager: appPreferenceManager)
         
         // initialize icon
         let icon = NSImage(named: "statusIcon")
@@ -44,8 +49,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // hide main window
         //self.window!.orderOut(self)
         
-        // start tasks
-        importTimeEntries()
     }
 
     func applicationWillTerminate(aNotification: NSNotification) {
@@ -58,14 +61,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func importTimeEntries()
     {
         timeEntryImporter.importTimeEntries({ (timeEntry: TimeEntry) -> Void in
-            println(timeEntry)
             self.timeEntryList.append(timeEntry)
-            self.timeEntryTable.reloadData();
+            self.timeEntryTable.reloadData()
+            self.window.display()
         })
     }
 
     // status menu logic
-    @IBAction func menueClicked(sender: NSMenuItem) {
+    @IBAction func statusMenuOnClick(sender: NSMenuItem) {
         log.info("Window is visible: \(self.window!.visible)")
 
         if (self.window!.visible) {
@@ -76,6 +79,25 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             sender.title = "Hide time entries"
         }
     }
+    
+    // preferences menu
+    @IBAction func menuPreferencesOnClick(sender: NSMenuItem) {
+        if(preferencesWindow == nil) {
+            preferencesWindow = PreferencesController(windowNibName:"Preferences")
+            preferencesWindow.appPreferenceManager = appPreferenceManager;
+        }
+        
+        preferencesWindow.showWindow(self)
+    }
+    
+    @IBAction func importButtonOnClick(sender: NSButton) {
+        
+        importTimeEntries()
+    }
+    
+    @IBAction func exportButtonOnClick(sender: NSButton) {
+    }
+    
     
    }
 

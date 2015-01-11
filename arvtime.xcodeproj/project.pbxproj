@@ -14,7 +14,10 @@
 		5F9829D01A617B6C00B2CC01 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F9829CF1A617B6C00B2CC01 /* Images.xcassets */; };
 		5F9829D31A617B6C00B2CC01 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F9829D11A617B6C00B2CC01 /* MainMenu.xib */; };
 		5F9829DF1A617B6C00B2CC01 /* arvtimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9829DE1A617B6C00B2CC01 /* arvtimeTests.swift */; };
-		5FF4EC7B1A61BC0100935C79 /* TimeEntryListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF4EC7A1A61BC0100935C79 /* TimeEntryListController.swift */; };
+		5FB723471A62DE73000AF140 /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FB723461A62DE73000AF140 /* Preferences.xib */; };
+		5FB723491A62DEED000AF140 /* PreferencesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB723481A62DEED000AF140 /* PreferencesController.swift */; };
+		5FB7234B1A62E6AC000AF140 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB7234A1A62E6AC000AF140 /* Preferences.swift */; };
+		5FF4EC7B1A61BC0100935C79 /* TimeEntryTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF4EC7A1A61BC0100935C79 /* TimeEntryTableController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,7 +93,10 @@
 		5F9829D81A617B6C00B2CC01 /* arvtimeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = arvtimeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F9829DD1A617B6C00B2CC01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F9829DE1A617B6C00B2CC01 /* arvtimeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = arvtimeTests.swift; sourceTree = "<group>"; };
-		5FF4EC7A1A61BC0100935C79 /* TimeEntryListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeEntryListController.swift; sourceTree = "<group>"; };
+		5FB723461A62DE73000AF140 /* Preferences.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Preferences.xib; sourceTree = "<group>"; };
+		5FB723481A62DEED000AF140 /* PreferencesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesController.swift; sourceTree = "<group>"; };
+		5FB7234A1A62E6AC000AF140 /* Preferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
+		5FF4EC7A1A61BC0100935C79 /* TimeEntryTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeEntryTableController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,7 +167,10 @@
 				5F9829CB1A617B6C00B2CC01 /* Supporting Files */,
 				5F4FAE1D1A618DEE00F7F626 /* TimeEntryImporter.swift */,
 				5F4FAE3D1A6198F800F7F626 /* TimeStructs.swift */,
-				5FF4EC7A1A61BC0100935C79 /* TimeEntryListController.swift */,
+				5FF4EC7A1A61BC0100935C79 /* TimeEntryTableController.swift */,
+				5FB723461A62DE73000AF140 /* Preferences.xib */,
+				5FB723481A62DEED000AF140 /* PreferencesController.swift */,
+				5FB7234A1A62E6AC000AF140 /* Preferences.swift */,
 			);
 			path = arvtime;
 			sourceTree = "<group>";
@@ -343,6 +352,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F9829D01A617B6C00B2CC01 /* Images.xcassets in Resources */,
+				5FB723471A62DE73000AF140 /* Preferences.xib in Resources */,
 				5F9829D31A617B6C00B2CC01 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -361,10 +371,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FB723491A62DEED000AF140 /* PreferencesController.swift in Sources */,
+				5FB7234B1A62E6AC000AF140 /* Preferences.swift in Sources */,
 				5F9829CE1A617B6C00B2CC01 /* AppDelegate.swift in Sources */,
 				5F4FAE1E1A618DEE00F7F626 /* TimeEntryImporter.swift in Sources */,
 				5F4FAE3E1A6198F800F7F626 /* TimeStructs.swift in Sources */,
-				5FF4EC7B1A61BC0100935C79 /* TimeEntryListController.swift in Sources */,
+				5FF4EC7B1A61BC0100935C79 /* TimeEntryTableController.swift in Sources */,
 				5F4FAE461A61A53E00F7F626 /* SwiftyJSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -35,15 +35,12 @@ class TimeEntryTableController : NSObject, NSTableViewDataSource,NSTableViewDele
         return row.objectForKey(tableColumn.identifier);
     }
     
-    func getDataArray() -> NSArray{
-        var dataArray:[NSDictionary] = [["FirstName": "Debasis", "LastName": "Das"],
-            ["FirstName": "Nishant", "LastName": "Singh"],
-            ["FirstName": "John", "LastName": "Doe"],
-            ["FirstName": "Jane", "LastName": "Doe"],
-            ["FirstName": "Mary", "LastName": "Jane"]];
-        return dataArray;
+    func tableView(tableView: NSTableView, shouldEditTableColumn tableColumn: NSTableColumn?, row: Int) -> Bool {
+        return false;
     }
-
+    
+    
+   
     func getValues() -> [NSDictionary] {
         let appDelegate = NSApplication.sharedApplication().delegate as AppDelegate
         

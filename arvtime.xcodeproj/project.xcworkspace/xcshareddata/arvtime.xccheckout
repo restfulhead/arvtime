@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>B7607327-1858-4198-B50E-D416B046EABC</string>
+	<key>IDESourceControlProjectName</key>
+	<string>arvtime</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>77A7F687CBF2C2BF6B61349132DC2FDE209DCE37</key>
+		<string>github.com:ruhkopf/arvtime.git</string>
+		<key>C861FC00CEE0F6A6BE81FCFF6785FAA78C58EBB3</key>
+		<string>github.com:lingoer/SwiftyJSON.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>arvtime.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>77A7F687CBF2C2BF6B61349132DC2FDE209DCE37</key>
+		<string>../..</string>
+		<key>C861FC00CEE0F6A6BE81FCFF6785FAA78C58EBB3</key>
+		<string>../..externals/SwiftyJSON</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:ruhkopf/arvtime.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>77A7F687CBF2C2BF6B61349132DC2FDE209DCE37</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>77A7F687CBF2C2BF6B61349132DC2FDE209DCE37</string>
+			<key>IDESourceControlWCCName</key>
+			<string>arvtime</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>C861FC00CEE0F6A6BE81FCFF6785FAA78C58EBB3</string>
+			<key>IDESourceControlWCCName</key>
+			<string>SwiftyJSON</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -10,6 +10,10 @@
 		5F4FAE1E1A618DEE00F7F626 /* TimeEntryImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4FAE1D1A618DEE00F7F626 /* TimeEntryImporter.swift */; };
 		5F4FAE3E1A6198F800F7F626 /* TimeStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4FAE3D1A6198F800F7F626 /* TimeStructs.swift */; };
 		5F4FAE461A61A53E00F7F626 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4FAE451A61A53E00F7F626 /* SwiftyJSON.swift */; };
+		5F8C8E401A630EA8008A77DF /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4FAE451A61A53E00F7F626 /* SwiftyJSON.swift */; };
+		5F8EF1D01A62FBAE00076466 /* CATSClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8EF1CF1A62FBAE00076466 /* CATSClient.swift */; };
+		5F8EF1E21A630C2500076466 /* CATSClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8EF1E11A630C2500076466 /* CATSClientTests.swift */; };
+		5F8EF1E31A630D0900076466 /* CATSClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8EF1CF1A62FBAE00076466 /* CATSClient.swift */; };
 		5F9829CE1A617B6C00B2CC01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9829CD1A617B6C00B2CC01 /* AppDelegate.swift */; };
 		5F9829D01A617B6C00B2CC01 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F9829CF1A617B6C00B2CC01 /* Images.xcassets */; };
 		5F9829D31A617B6C00B2CC01 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F9829D11A617B6C00B2CC01 /* MainMenu.xib */; };
@@ -85,6 +89,8 @@
 		5F4FAE2E1A61987600F7F626 /* SwiftyJSON.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftyJSON.xcodeproj; path = SwiftyJSON/SwiftyJSON.xcodeproj; sourceTree = "<group>"; };
 		5F4FAE3D1A6198F800F7F626 /* TimeStructs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeStructs.swift; sourceTree = "<group>"; };
 		5F4FAE451A61A53E00F7F626 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		5F8EF1CF1A62FBAE00076466 /* CATSClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CATSClient.swift; sourceTree = "<group>"; };
+		5F8EF1E11A630C2500076466 /* CATSClientTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CATSClientTests.swift; sourceTree = "<group>"; };
 		5F9829C81A617B6C00B2CC01 /* arvtime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = arvtime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F9829CC1A617B6C00B2CC01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F9829CD1A617B6C00B2CC01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -171,6 +177,7 @@
 				5FB723461A62DE73000AF140 /* Preferences.xib */,
 				5FB723481A62DEED000AF140 /* PreferencesController.swift */,
 				5FB7234A1A62E6AC000AF140 /* Preferences.swift */,
+				5F8EF1CF1A62FBAE00076466 /* CATSClient.swift */,
 			);
 			path = arvtime;
 			sourceTree = "<group>";
@@ -187,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				5F9829DE1A617B6C00B2CC01 /* arvtimeTests.swift */,
+				5F8EF1E11A630C2500076466 /* CATSClientTests.swift */,
 				5F9829DC1A617B6C00B2CC01 /* Supporting Files */,
 			);
 			path = arvtimeTests;
@@ -376,6 +384,7 @@
 				5F9829CE1A617B6C00B2CC01 /* AppDelegate.swift in Sources */,
 				5F4FAE1E1A618DEE00F7F626 /* TimeEntryImporter.swift in Sources */,
 				5F4FAE3E1A6198F800F7F626 /* TimeStructs.swift in Sources */,
+				5F8EF1D01A62FBAE00076466 /* CATSClient.swift in Sources */,
 				5FF4EC7B1A61BC0100935C79 /* TimeEntryTableController.swift in Sources */,
 				5F4FAE461A61A53E00F7F626 /* SwiftyJSON.swift in Sources */,
 			);
@@ -386,6 +395,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F9829DF1A617B6C00B2CC01 /* arvtimeTests.swift in Sources */,
+				5F8EF1E21A630C2500076466 /* CATSClientTests.swift in Sources */,
+				5F8EF1E31A630D0900076466 /* CATSClient.swift in Sources */,
+				5F8C8E401A630EA8008A77DF /* SwiftyJSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

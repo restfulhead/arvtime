@@ -12,6 +12,8 @@
 	<dict>
 		<key>77A7F687CBF2C2BF6B61349132DC2FDE209DCE37</key>
 		<string>github.com:ruhkopf/arvtime.git</string>
+		<key>93608FFF008CD82ADDFA850BB9C1630FA754586F</key>
+		<string>github.com:Thomvis/BrightFutures.git</string>
 		<key>C861FC00CEE0F6A6BE81FCFF6785FAA78C58EBB3</key>
 		<string>github.com:lingoer/SwiftyJSON.git</string>
 	</dict>
@@ -21,6 +23,8 @@
 	<dict>
 		<key>77A7F687CBF2C2BF6B61349132DC2FDE209DCE37</key>
 		<string>../..</string>
+		<key>93608FFF008CD82ADDFA850BB9C1630FA754586F</key>
+		<string>../../externals/BrightFutures</string>
 		<key>C861FC00CEE0F6A6BE81FCFF6785FAA78C58EBB3</key>
 		<string>../..externals/SwiftyJSON</string>
 	</dict>
@@ -39,6 +43,14 @@
 			<string>77A7F687CBF2C2BF6B61349132DC2FDE209DCE37</string>
 			<key>IDESourceControlWCCName</key>
 			<string>arvtime</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>93608FFF008CD82ADDFA850BB9C1630FA754586F</string>
+			<key>IDESourceControlWCCName</key>
+			<string>BrightFutures</string>
 		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>

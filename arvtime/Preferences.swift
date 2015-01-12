@@ -12,7 +12,11 @@ import XCGLogger
 struct AppPreferences
 {
     var togglApiKey: String
-    
+
+    var catsServer: String
+    var catsUser: String
+    var catsPassword: String
+    var catsConsumerKey: String
     
 }
 
@@ -20,7 +24,7 @@ class AppPreferenceManager : NSObject {
     
     let log = XCGLogger.defaultInstance()
     
-    var appPreferences = AppPreferences(togglApiKey:"")
+    var appPreferences = AppPreferences(togglApiKey: "", catsServer: "", catsUser: "", catsPassword: "", catsConsumerKey: "");
     
     override init() {
         super.init()
@@ -31,6 +35,10 @@ class AppPreferenceManager : NSObject {
         var defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
         
         defaults.setObject(preferences.togglApiKey, forKey: "togglApiKey")
+        defaults.setObject(preferences.catsServer, forKey: "catsServer")
+        defaults.setObject(preferences.catsUser, forKey: "catsUser")
+        defaults.setObject(preferences.catsPassword, forKey: "catsPassword")
+        defaults.setObject(preferences.catsConsumerKey, forKey: "catsConsumerKey")
         
         defaults.synchronize()
         
@@ -41,7 +49,11 @@ class AppPreferenceManager : NSObject {
     {
         var defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
         
-        appPreferences = AppPreferences(togglApiKey: getOrDefault("togglApiKey", defaults: defaults))
+        appPreferences = AppPreferences(togglApiKey: getOrDefault("togglApiKey", defaults: defaults),
+            catsServer: getOrDefault("catsServer", defaults: defaults),
+            catsUser: getOrDefault("catsUser", defaults: defaults),
+            catsPassword: getOrDefault("catsPassword", defaults: defaults),
+            catsConsumerKey: getOrDefault("catsConsumerKey", defaults: defaults))
         
         return appPreferences
     }

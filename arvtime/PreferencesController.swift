@@ -8,20 +8,26 @@
 
 import Foundation
 import Cocoa
-import XCGLogger
 
 class PreferencesController : NSWindowController {
-    
-    let log = XCGLogger.defaultInstance()
-    
+        
     @IBOutlet weak var togglApiKeyText: NSTextField!
+    
+    @IBOutlet weak var catsServerText: NSTextField!
+    
+    @IBOutlet weak var catsUserText: NSTextField!
+    
+    @IBOutlet weak var catsPasswordText: NSSecureTextField!
+    
+    @IBOutlet weak var catsConsumerKeyText: NSTextField!
+    
+    
     
     var appPreferenceManager: AppPreferenceManager!
     
     override init()
     {
         super.init()
-        log.info("init()")
     }
     
     override init(window: NSWindow!)
@@ -32,8 +38,6 @@ class PreferencesController : NSWindowController {
     required init?(coder: (NSCoder!))
     {
         super.init(coder: coder)
-        log.info("init(NScoder)")
-
     }
     
     override func windowDidLoad() {
@@ -41,6 +45,10 @@ class PreferencesController : NSWindowController {
         
         // populate preferences
         self.togglApiKeyText.stringValue = appPreferenceManager.appPreferences.togglApiKey
+        self.catsServerText.stringValue = appPreferenceManager.appPreferences.catsServer
+        self.catsUserText.stringValue = appPreferenceManager.appPreferences.catsUser
+        self.catsPasswordText.stringValue = appPreferenceManager.appPreferences.catsPassword
+        self.catsConsumerKeyText.stringValue = appPreferenceManager.appPreferences.catsConsumerKey
     }
     
    
@@ -50,7 +58,8 @@ class PreferencesController : NSWindowController {
     }
     
     func savePreferences() {
-        appPreferenceManager.savePreferences(AppPreferences(togglApiKey: togglApiKeyText.stringValue))
+        appPreferenceManager.savePreferences(AppPreferences(togglApiKey: togglApiKeyText.stringValue,
+            catsServer: catsServerText.stringValue, catsUser:catsUserText.stringValue, catsPassword: catsPasswordText.stringValue, catsConsumerKey: catsConsumerKeyText.stringValue))
         self.window!.orderOut(self)
     }
     

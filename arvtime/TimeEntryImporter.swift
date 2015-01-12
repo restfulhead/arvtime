@@ -32,7 +32,7 @@ class TimerEntryImporter {
         timer.invalidate()
     }
     
-    func importTimeEntries(handler: (TimeEntry) -> Void) {
+    func importTimeEntries(handler: ([TimeEntry]) -> Void) {
 
         // basic authentication
         let username = appPreferenceManager.appPreferences.togglApiKey
@@ -60,6 +60,7 @@ class TimerEntryImporter {
                 self.log.debug("\(jsonResult)")
                 
                 let json = JSON(jsonResult!)
+                var entries: [TimeEntry] = []
                 
                 for (index: String, timeEntryJSON: JSON) in json["data"] {
                     
@@ -71,12 +72,15 @@ class TimerEntryImporter {
                     
                     let project = Project(pid: "123", name: "test project")
                     let task = Task(tid: "123", name: "test task")
+                    let durationInMS = timeEntryJSON["dur"].intValue
+                    let durationInHrs = durationInMS / 60 / 60 / 1000
                     
-                    let timeEntry = TimeEntry(description: timeEntryJSON["description"].stringValue, duration: timeEntryJSON["dur"].intValue, date: NSDate(timeInterval:0, sinceDate:date!), project: project, task: task)
+                    let timeEntry = TimeEntry(description: timeEntryJSON["description"].stringValue, duration: durationInHrs, date: NSDate(timeInterval:0, sinceDate:date!), project: project, task: task)
     
-                    // invoke call-back
-                    handler(timeEntry)
+                    entries.append(timeEntry)
                 }
+                
+                handler(entries)
                 
             } else {
                 self.log.error("\(error)")

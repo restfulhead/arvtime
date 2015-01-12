@@ -15,11 +15,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     // UI
     @IBOutlet weak var window: NSWindow!
     @IBOutlet weak var statusMenu: NSMenu!
-    var preferencesWindow: PreferencesController!
-    
-    // TODO move me
     @IBOutlet weak var timeEntryTable: NSTableView!
-
+    @IBOutlet weak var progressIndicator: NSProgressIndicator!
+    @IBOutlet weak var progressStatusLine: NSTextField!
+    
+    var preferencesWindow: PreferencesController!
+    var progressController: ProgressController!
+    
     let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(-1)
     
     // business logic
@@ -27,16 +29,21 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var timeEntryList: [TimeEntry] = []
     var appPreferenceManager: AppPreferenceManager!
     var timeEntryImporter: TimerEntryImporter!
+    var catsClient : CATSClient!
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         
         // initialize logging
         log.setup(logLevel: .Debug, showLogLevel: true, showFileNames: true, showLineNumbers: true)
-        
+
+        // hide main window
+        //self.window!.orderOut(self)
+
         // load user preferences
         appPreferenceManager = AppPreferenceManager()
         appPreferenceManager.loadPreferences()
         timeEntryImporter = TimerEntryImporter(appPreferenceManager: appPreferenceManager)
+        catsClient = CATSClient(appPreferenceManager: appPreferenceManager)
         
         // initialize icon
         let icon = NSImage(named: "statusIcon")
@@ -46,25 +53,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         statusItem.image = icon
         statusItem.menu = statusMenu
         
-        // hide main window
-        //self.window!.orderOut(self)
-        
+        // initialize other controls
+        progressController = ProgressController(progressIndicator: progressIndicator, progressStatusLine: progressStatusLine)
     }
 
     func applicationWillTerminate(aNotification: NSNotification) {
         
         // stop tasks
         //timeEntryImporter.stop();
-    }
-
-
-    func importTimeEntries()
-    {
-        timeEntryImporter.importTimeEntries({ (timeEntry: TimeEntry) -> Void in
-            self.timeEntryList.append(timeEntry)
-            self.timeEntryTable.reloadData()
-            self.window.display()
-        })
     }
 
     // status menu logic
@@ -91,13 +87,87 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     @IBAction func importButtonOnClick(sender: NSButton) {
-        
         importTimeEntries()
     }
     
     @IBAction func exportButtonOnClick(sender: NSButton) {
+        exportTimeEntries()
     }
     
     
-   }
+    
+    func importTimeEntries()
+    {
+        progressController.startProgress("Importing time entries from Toggl")
+        
+        timeEntryList.removeAll(keepCapacity: true)
+        timeEntryImporter.importTimeEntries({ (timeEntries: [TimeEntry]) -> Void in
+            
+            var count = 0
+            for timeEntry in timeEntries {
+                self.timeEntryList.append(timeEntry)
+                count++
+            }
+            
+            // refresh data table
+            self.timeEntryTable.reloadData()
+            
+            // stop progress
+            self.progressController.stopProgress("Successfully loaded \(count) entries")
+            
+            // refresh display
+            self.window.display()
+        })
+    }
+    
+    func exportTimeEntries()
+    {
+        if (timeEntryList.count < 1) {
+            return; // nothing to do
+        }
+        
+        progressController.startProgress("Exporting time entries to CATS")
+        
+        // (1) first log in to get a session id
+        var semaphore = dispatch_semaphore_create(0)
+        var retUserDetails: UserDetails?
+        
+        catsClient.login(appPreferenceManager.appPreferences.catsUser, password: appPreferenceManager.appPreferences.catsPassword, handler: {(userDetails: UserDetails?, error: NSError?) -> Void in
+            
+            self.progressController.updateProgress("Authenticated as \(userDetails!.firstName) \(userDetails!.lastName), now posting time entries...")
+            retUserDetails = userDetails;
+            
+            // refresh display
+            self.window.display()
+            
+            // signal that we've processed the response and we're done waiting
+            dispatch_semaphore_signal(semaphore)
+        })
 
+        // wait for the async web service call to finish
+        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER)
+        
+        // (2) post each entry
+        var count = 0
+        var total = timeEntryList.count
+        for timeEntry in timeEntryList {
+            
+            // FIXME get order id and sub order id from time entry project configuration
+            catsClient.postNewEntry(retUserDetails!, timeEntry: timeEntry, orderId: "USI00028", subOrderId: "USI00028-110", handler: {(result:TimeEntryResult?, error:NSError?) -> Void in
+              
+                self.progressController.updateProgress("Successfully created \(result!.timeId)")
+                
+                count++
+                
+                // refresh display
+                self.window.display()
+            })
+        }
+        
+        while (count < total) {
+            // wait until all entries where posted
+        }
+        
+        progressController.stopProgress("Successfully exported \(count) entries")
+    }
+}

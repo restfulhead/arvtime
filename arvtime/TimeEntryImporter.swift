@@ -11,25 +11,12 @@ import Cocoa
 import XCGLogger
 
 class TimerEntryImporter {
-    var timer = NSTimer()
     let log = XCGLogger.defaultInstance()
     var appPreferenceManager: AppPreferenceManager
     
     init(appPreferenceManager: AppPreferenceManager)
     {
         self.appPreferenceManager = appPreferenceManager
-    }
-    
-    func start() {
-        self.timer = NSTimer.scheduledTimerWithTimeInterval(5.0,
-            target: self,
-            selector: Selector("importTimeEntries"),
-            userInfo: nil,
-            repeats: true)
-    }
-    
-    func stop() {
-        timer.invalidate()
     }
     
     func importTimeEntries(handler: ([TimeEntry]) -> Void) {
@@ -70,8 +57,8 @@ class TimerEntryImporter {
                     let date = dateStringFormatter.dateFromString(timeEntryJSON["start"].stringValue)
 
                     
-                    let project = Project(pid: "123", name: "test project")
-                    let task = Task(tid: "123", name: "test task")
+                    let project = Project(pid: timeEntryJSON["pid"].stringValue, name: timeEntryJSON["project"].stringValue)
+                    let task = Task(tid: timeEntryJSON["tid"].stringValue, name: timeEntryJSON["task"].stringValue)
                     let durationInMS = timeEntryJSON["dur"].intValue
                     let durationInHrs = durationInMS / 60 / 60 / 1000
                     
@@ -90,8 +77,4 @@ class TimerEntryImporter {
         
     }
     
-    
-    deinit {
-        self.timer.invalidate()
-    }
 }

@@ -687,16 +687,16 @@
             <point key="canvasLocation" x="317" y="359.5"/>
         </menu>
         <window title="arvtime" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
-            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="593" height="375"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
+            <rect key="contentRect" x="335" y="390" width="743" height="502"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
             <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="593" height="375"/>
+                <rect key="frame" x="0.0" y="0.0" width="743" height="502"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eas-Ho-Vwj">
-                        <rect key="frame" x="8" y="66" width="575" height="303"/>
+                        <rect key="frame" x="8" y="193" width="724" height="303"/>
                         <clipView key="contentView" misplaced="YES" id="e8f-FZ-Cbv">
                             <rect key="frame" x="1" y="0.0" width="238" height="134"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -709,7 +709,7 @@
                                     <tableViewGridLines key="gridStyleMask" dashed="YES"/>
                                     <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                     <tableColumns>
-                                        <tableColumn identifier="project" width="96.73046875" minWidth="40" maxWidth="1000" id="awC-zn-8iV">
+                                        <tableColumn identifier="project" width="62.52734375" minWidth="40" maxWidth="1000" id="awC-zn-8iV">
                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Project">
                                                 <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -722,7 +722,7 @@
                                             </textFieldCell>
                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                         </tableColumn>
-                                        <tableColumn identifier="task" width="87.7109375" minWidth="40" maxWidth="1000" id="2gF-hE-QWe">
+                                        <tableColumn identifier="task" width="73.96484375" minWidth="40" maxWidth="1000" id="2gF-hE-QWe">
                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Task">
                                                 <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -735,7 +735,7 @@
                                             </textFieldCell>
                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                         </tableColumn>
-                                        <tableColumn identifier="description" width="380.078125" minWidth="40" maxWidth="1000" id="USH-2R-b4m">
+                                        <tableColumn identifier="description" width="576.078125" minWidth="40" maxWidth="1000" id="USH-2R-b4m">
                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Description">
                                                 <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -761,7 +761,7 @@
                             <rect key="frame" x="1" y="118.99906659126282" width="238" height="15"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
-                        <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="Fyx-e2-deb">
+                        <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="Fyx-e2-deb">
                             <rect key="frame" x="224" y="17" width="15" height="102"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
@@ -771,7 +771,7 @@
                         </tableHeaderView>
                     </scrollView>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YLJ-54-WXj">
-                        <rect key="frame" x="2" y="28" width="162" height="32"/>
+                        <rect key="frame" x="2" y="155" width="162" height="32"/>
                         <buttonCell key="cell" type="push" title="&gt; Import from Toggl" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="0R8-fQ-tMg">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
@@ -781,7 +781,7 @@
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vf1-ov-xly">
-                        <rect key="frame" x="442" y="28" width="147" height="32"/>
+                        <rect key="frame" x="591" y="155" width="147" height="32"/>
                         <buttonCell key="cell" type="push" title="Export to CATS &gt;" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="gqj-i5-tsH">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
@@ -790,20 +790,20 @@
                             <action selector="exportButtonOnClick:" target="Voe-Tx-rLC" id="u4w-lA-23j"/>
                         </connections>
                     </button>
+                    <progressIndicator horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" maxValue="100" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="iCG-2n-jAf">
+                        <rect key="frame" x="10" y="135" width="16" height="16"/>
+                    </progressIndicator>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2hU-47-DjV">
-                        <rect key="frame" x="34" y="5" width="551" height="22"/>
+                        <rect key="frame" x="34" y="13" width="698" height="141"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" borderStyle="border" title="Ready..." drawsBackground="YES" id="xO7-YR-fuc">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="secondarySelectedControlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <progressIndicator horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" maxValue="100" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="iCG-2n-jAf">
-                        <rect key="frame" x="10" y="8" width="16" height="16"/>
-                    </progressIndicator>
                 </subviews>
             </view>
-            <point key="canvasLocation" x="131.5" y="366.5"/>
+            <point key="canvasLocation" x="206.5" y="430"/>
         </window>
     </objects>
 </document>

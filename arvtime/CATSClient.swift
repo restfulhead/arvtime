@@ -46,7 +46,6 @@ class CATSClient {
     
         let headerValues: [String : String] = ["User" : username, "Password" : password]
         
-        var semaphore = dispatch_semaphore_create(0)
         var userDetails: UserDetails?
         var retSID: String?
         var retError: NSError?

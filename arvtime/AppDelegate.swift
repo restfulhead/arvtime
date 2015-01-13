@@ -59,8 +59,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationWillTerminate(aNotification: NSNotification) {
         
-        // stop tasks
-        //timeEntryImporter.stop();
+
     }
 
     // status menu logic
@@ -122,11 +121,26 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func exportTimeEntries()
     {
+        // do nothing if we don't have any time entries
         if (timeEntryList.count < 1) {
             return; // nothing to do
         }
         
-        progressController.startProgress("Exporting time entries to CATS")
+        // get selected time entries
+        let selectedRows = timeEntryTable.selectedRowIndexes
+        if (selectedRows.count < 1) {
+            return; // nothing selected
+        }
+        
+        var selectedTimeEntries : [TimeEntry] = []
+        var index = selectedRows.firstIndex
+        while (index != NSNotFound) {
+            selectedTimeEntries.append(timeEntryList[index])
+            index = selectedRows.indexGreaterThanIndex(index)
+        }
+        
+        progressController.startProgress("Exporting \(selectedTimeEntries.count) time entries to CATS")
+        self.window.display()
         
         // (1) first log in to get a session id
         var semaphore = dispatch_semaphore_create(0)
@@ -137,9 +151,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             self.progressController.updateProgress("Authenticated as \(userDetails!.firstName) \(userDetails!.lastName), now posting time entries...")
             retUserDetails = userDetails;
             
-            // refresh display
-            self.window.display()
-            
             // signal that we've processed the response and we're done waiting
             dispatch_semaphore_signal(semaphore)
         })
@@ -147,10 +158,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // wait for the async web service call to finish
         dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER)
         
-        // (2) post each entry
+        // refresh display
+        self.window.display()
+        
+        // (2) post each selected entry
         var count = 0
-        var total = timeEntryList.count
-        for timeEntry in timeEntryList {
+        var total = selectedTimeEntries.count
+        for timeEntry in selectedTimeEntries {
             
             // FIXME get order id and sub order id from time entry project configuration
             catsClient.postNewEntry(retUserDetails!, timeEntry: timeEntry, orderId: "USI00028", subOrderId: "USI00028-110", handler: {(result:TimeEntryResult?, error:NSError?) -> Void in
@@ -158,9 +172,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 self.progressController.updateProgress("Successfully created \(result!.timeId)")
                 
                 count++
-                
-                // refresh display
-                self.window.display()
             })
         }
         
@@ -169,5 +180,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
         
         progressController.stopProgress("Successfully exported \(count) entries")
+        
+        // refresh display
+        self.window.display()
     }
 }
